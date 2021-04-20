@@ -38,7 +38,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: mojs
       - run: npm ci
-        # env:
-        #  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
       - run: npm run build
 
