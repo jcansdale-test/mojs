@@ -10,6 +10,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - run: rm package-lock.json
       - run: npm i
         env:
           GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
