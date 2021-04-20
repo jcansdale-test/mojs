@@ -35,10 +35,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: mojs
+          # registry-url: https://npm.pkg.github.com/
+          # scope: mojs
       - run: npm ci
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
       - run: npm run build
-
