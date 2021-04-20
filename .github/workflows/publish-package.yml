@@ -6,6 +6,14 @@ on:
   push:
 
 jobs:
+  simple:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm i
+        env:
+          GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
+
   build:
     runs-on: macos-latest
     steps:
